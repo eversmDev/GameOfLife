@@ -13,9 +13,12 @@ namespace GameOfLive.API
 
             bundles.Add(new ScriptBundle("~/bundles/angular")
                 .Include("~/Scripts/angular.js")
+                .Include("~/Scripts/angular-route.js")
                 .Include("~/ClientApp/GameOfLife.Module.js")
-                .Include("~/ClientApp/GameOfLife.Component.js")
-                .Include("~/ClientApp/GameOfLife.Service.js"));
+                .Include("~/ClientApp/GameOfLife.config.js")
+                .Include("~/ClientApp/Services/GameOfLife.Service.js")
+                .Include("~/ClientApp/GameOfLifeBoard/GameOfLifeBoard.Component.js")
+                );
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.

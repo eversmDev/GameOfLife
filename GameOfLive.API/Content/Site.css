@@ -7,6 +7,10 @@
 }
 
 .table td, .table th {
-    min-width: 20px!important;
-    max-width: 30px!important;
+    min-width: 20px !important;
+    max-width: 30px !important;
+}
+
+.table tbody > tr > td {
+    line-height: 0.9;
 }

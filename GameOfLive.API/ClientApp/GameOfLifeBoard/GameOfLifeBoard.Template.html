@@ -2,6 +2,18 @@
     <div class="col-md-2">
         <button ng-click="$ctrl.performStep()">Step</button>
     </div>
+    <div class="col-md-2">
+        <label for="rowCount">Rows:</label>
+        <input type="text" id="rowCount" name="rowCount" ng-model="$ctrl.rowCount" class="form-control" placeholder="" />
+    </div>
+    <div class="col-md-2">
+        <label for="columnCount">Columns:</label>
+        <input type="text" id="columnCount" name="ColumnCount" ng-model="$ctrl.columnCount" class="form-control" placeholder="" />
+    </div>
+    <div class="col-md-2">
+        <label for="columnCount">Columns:</label>
+        <button type="button" ng-click="$ctrl.changeBoardSize()">Set</button>
+    </div>
 </div>
 <hr />
 <div class="row">

@@ -186,10 +186,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
-    <Content Include="ClientApp\GameOfLife.Component.js" />
+    <Content Include="ClientApp\GameOfLifeBoard\GameOfLifeBoard.Component.js" />
+    <Content Include="ClientApp\GameOfLife.config.js" />
     <Content Include="ClientApp\GameOfLife.Module.js" />
-    <Content Include="ClientApp\GameOfLife.Service.js" />
-    <Content Include="ClientApp\GameOfLife.Template.html" />
+    <Content Include="ClientApp\Services\GameOfLife.Service.js" />
+    <Content Include="ClientApp\GameOfLifeBoard\GameOfLifeBoard.Template.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
