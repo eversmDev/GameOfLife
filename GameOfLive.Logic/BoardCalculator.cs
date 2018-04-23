@@ -33,10 +33,12 @@ namespace GameOfLive.Logic
             {
                 for (int j = 0; j < columnCount; j++)
                 {
+                    //Get alive neighbours total for each cell
                     aliveNeighBoursCount = GetCellAliveNeighBours(i, j);
 
                     var currentCellState = board[i, j];
-
+                    
+                    //Set new state based on states array
                     newboard[i, j] = cellStates[currentCellState, aliveNeighBoursCount];
                 }
             }
@@ -49,6 +51,7 @@ namespace GameOfLive.Logic
 
             var neighbourTotal = 0;
 
+            //Set row and column position to start count, if the positions are outsize boundaries these are set to 0
             var rowPosition = cellRowPosition == 0 ? cellRowPosition : cellRowPosition - 1;
             var columnPosition = cellColumnPosition == 0 ? cellColumnPosition : cellColumnPosition - 1;
 
@@ -57,6 +60,7 @@ namespace GameOfLive.Logic
 
                 for (int j = columnPosition; (j < cellColumnPosition + 2) && !(j >= columnCount); j++)
                 {
+                    //If the current position is the verified cell it is skiped
                     if (i == cellRowPosition && j == cellColumnPosition) continue;
 
                     neighbourTotal += board[i, j];
