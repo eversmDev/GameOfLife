@@ -1,29 +1,47 @@
-﻿<div class="row">
-    <div class="col-md-2">
-        <button ng-click="$ctrl.performStep()">Step</button>
+﻿
+<div class="row">
+    <div class="col-md-12">
+        <h4>Click on some cell to change its state (1=alive, 0=dead)</h4>
+        <div ng-show="$ctrl.error!=''"><span class="label label-danger">{{$ctrl.error}}</span></div>
     </div>
-    <div class="col-md-2">
-        <label for="rowCount">Rows:</label>
-        <input type="text" id="rowCount" name="rowCount" ng-model="$ctrl.rowCount" class="form-control" placeholder="" />
+</div>
+<form class="form-inline">
+    <div class="form-group">
+
+        <div class="input-group col-md-2">
+            <div class="input-group-addon">Rows</div>
+            <input type="text" id="rowCount" name="rowCount" ng-model="$ctrl.rowCount" class="form-control" />
+        </div>
+
+        <div class="input-group col-md-2">
+            <div class="input-group-addon">Columns</div>
+            <input type="text" id="columnCount" name="ColumnCount" ng-model="$ctrl.columnCount" class="form-control" placeholder="" />
+        </div>
+
+        <button type="button" ng-click="$ctrl.changeBoardSize()" class="btn btn-default">Set</button>
     </div>
-    <div class="col-md-2">
-        <label for="columnCount">Columns:</label>
-        <input type="text" id="columnCount" name="ColumnCount" ng-model="$ctrl.columnCount" class="form-control" placeholder="" />
-    </div>
-    <div class="col-md-2">
-        <label for="columnCount">Columns:</label>
-        <button type="button" ng-click="$ctrl.changeBoardSize()">Set</button>
-    </div>
+
+</form>
+<hr />
+<button ng-click="$ctrl.performStep()" class="btn btn-default">Step</button>
+<button ng-click="$ctrl.reset()" class="btn btn-default">Reset board</button>
+<div class="checkbox">
+    <label>
+        <input type="checkbox" value="" ng-model="$ctrl.randomStates" ng-change="$ctrl.changeBoardSize()">
+        Random cell states
+    </label>
 </div>
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <table class="table table-condensed table-bordered">
-            <tr ng-repeat="row in $ctrl.board track by $index" ng-init="rowIndex=$index">
-                <td ng-repeat="cell in row track by $index" ng-init="columnIndex=$index">
-                    <span ng-click="$ctrl.changeCell(rowIndex,columnIndex)" style="cursor:pointer">{{cell}}</span>
-                </td>
-            </tr>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-condensed table-bordered">
+                <tr ng-repeat="row in $ctrl.board track by $index" ng-init="rowIndex=$index">
+                    <td ng-repeat="cell in row track by $index" ng-init="columnIndex=$index">
+                        <span ng-click="$ctrl.changeCell(rowIndex,columnIndex)" style="cursor:pointer">{{cell}}</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
