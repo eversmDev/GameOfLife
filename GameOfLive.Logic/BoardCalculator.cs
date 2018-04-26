@@ -51,7 +51,7 @@ namespace GameOfLive.Logic
 
             var neighbourTotal = 0;
 
-            //Set row and column position to start count, if the positions are outsize boundaries these are set to 0
+            //Set row and column position to start count, if the positions are outside boundaries these are set to 0
             var rowPosition = cellRowPosition == 0 ? cellRowPosition : cellRowPosition - 1;
             var columnPosition = cellColumnPosition == 0 ? cellColumnPosition : cellColumnPosition - 1;
 

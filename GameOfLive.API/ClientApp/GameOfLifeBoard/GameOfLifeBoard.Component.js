@@ -14,11 +14,6 @@
                 self.columnCount = 50;
                 self.error = sizeErrorMessage;
             }
-
-            if (self.rowCount > 50) {
-                self.rowCount = 50;
-                self.error = sizeErrorMessage;
-            }
            
             var onError = function (reason) {
                 self.error = 'Could not perform step';
